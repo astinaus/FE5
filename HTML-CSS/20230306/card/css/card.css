@@ -44,6 +44,8 @@ body {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   word-break: break-all;
+  margin: 12px 0 16px;
+  line-height: 20px;
 }
 
 .underline {
