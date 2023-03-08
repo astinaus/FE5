@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>align-items</title>
+    <style>
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+        background: #eee;
+        border: 3px solid #ddd;
+        margin-bottom: 10px;
+        height: 150px;
+      }
+
+      .flex-item {
+        border: 3px solid rosybrown;
+        background: royalblue;
+        width: 200px;
+        text-align: center;
+      }
+      /* 기본값 */
+      .stretch {
+        align-items: stretch;
+      }
+
+      .center {
+        align-items: center;
+      }
+
+      .flex-start {
+        align-items: flex-start;
+      }
+
+      .flex-end {
+        align-items: flex-end;
+      }
+
+      .wrap {
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 블록 -->
+    <div class="flex-container">
+      <div class="flex-item">A</div>
+      <div class="flex-item">B</div>
+      <div class="flex-item">C</div>
+      <div class="flex-item">A</div>
+      <div class="flex-item">B</div>
+      <div class="flex-item">C</div>
+      <div class="flex-item">A</div>
+      <div class="flex-item">B</div>
+      <div class="flex-item">C</div>
+    </div>
+    <div class="flex-container wrap">
+      <div class="flex-item">A</div>
+      <div class="flex-item">B</div>
+      <div class="flex-item">C</div>
+      <div class="flex-item">A</div>
+      <div class="flex-item">B</div>
+      <div class="flex-item">C</div>
+      <div class="flex-item">A</div>
+      <div class="flex-item">B</div>
+      <div class="flex-item">C</div>
+    </div>
+    <div class="flex-container stretch">
+      <div class="flex-item">A</div>
+      <div class="flex-item">B</div>
+      <div class="flex-item">C</div>
+    </div>
+    <div class="flex-container center">
+      <div class="flex-item">A</div>
+      <div class="flex-item">B</div>
+      <div class="flex-item">C</div>
+    </div>
+    <div class="flex-container flex-start">
+      <div class="flex-item">A</div>
+      <div class="flex-item">B</div>
+      <div class="flex-item">C</div>
+    </div>
+    <div class="flex-container flex-end">
+      <div class="flex-item">A</div>
+      <div class="flex-item">B</div>
+      <div class="flex-item">C</div>
+    </div>
+  </body>
+</html>

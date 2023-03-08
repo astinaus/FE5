@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex-layout</title>
+    <style>
+        header {
+            background: royalblue;
+        }
+        
+        section {
+            background: hotpink;
+        }
+
+        aside {
+            background: lightblue ;
+        }
+
+        footer {
+            background: lightgreen;
+        }
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: 400px;
+            justify-content: space-between;
+        }
+
+        header, footer { 
+            flex-basis: 50px;
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .flex-container section {
+            flex-grow: 1;
+        }
+
+        .flex-container aside {
+            flex-basis: 200px;
+        }
+
+        header, section, aside, footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header>header</header>
+      <div class="flex-container">
+        <section>section</section>
+        <aside>aside</aside>
+      </div>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>

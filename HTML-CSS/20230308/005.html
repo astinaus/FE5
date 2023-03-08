@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>align-items</title>
+    <style>
+      .flex-container {
+        display: flex;
+        background: #eee;
+        border: 3px solid #ddd;
+        margin-bottom: 10px;
+        height: 400px;
+      }
+
+      .flex-item {
+        border: 3px solid rosybrown;
+        background: royalblue;
+        width: 200px;
+        height: 100px;
+        text-align: center;
+        flex-basis: 100px;
+        flex-shrink: 0;
+      }
+
+      .flex-item:nth-child(1) {
+        flex-grow: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 블록 -->
+    <div class="flex-container">
+      <div class="flex-item">A</div>
+      <div class="flex-item">B</div>
+      <div class="flex-item">C</div>
+    </div>
+    <div class="flex-container">
+      <div class="flex-item">A</div>
+      <div class="flex-item">B</div>
+      <div class="flex-item">C</div>
+      <div class="flex-item">A</div>
+      <div class="flex-item">B</div>
+      <div class="flex-item">C</div>
+      <div class="flex-item">A</div>
+      <div class="flex-item">B</div>
+      <div class="flex-item">C</div>
+    </div>
+  </body>
+</html>

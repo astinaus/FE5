@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid-area</title>
+    <style>
+      body {
+        background: #eee;
+      }
+
+      header, section, aside, footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      header {
+        background: limegreen;
+        grid-area: head;
+
+      }
+      section {
+        background: salmon;
+        grid-area: section;
+      }
+      aside {
+        background: slateblue;
+        grid-area: aside;
+      }
+      footer {
+        background: gold;
+        grid-area: foot;
+      }
+
+      .grid-container {
+        display: grid;
+        gap: 10px;
+        width: 100%;
+        height: 750px;
+        grid-template-areas:
+          "head head"
+          "section aside"
+          "foot foot";
+
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 1fr 3fr 1fr;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header>header</header>
+      <section>section</section>
+      <aside>aside</aside>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>
