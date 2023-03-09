@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Pretendard-Regular";
+  background: gainsboro;
+}
+
+.card-item a {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: #29363d;
+  display: block;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: linear 0.1s;
+  width: 288px;
+}
+
+.card-item a:hover {
+  transform: scale(0.95);
+}
+
+.card-item img {
+  width: 100%;
+  aspect-ratio: 288/196;
+  object-fit: cover;
+  vertical-align: top;
+}
+
+.card-text {
+  padding: 24px 16px 16px;
+}
+
+.card-text .title {
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-text .title + p {
+  font-size: 12px;
+  color: #5a6a72;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  word-break: break-all;
+  margin: 12px 0 16px;
+  line-height: 20px;
+}
+
+.underline {
+  padding-left: 6px;
+  font-size: 14px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.flex-container {
+  width: min(1224px, 100% - 60px);
+  display: flex;
+  margin: auto;
+  gap: 32px 24px;
+  flex-wrap: wrap;
+}
+
+.flex-container article {
+  width: calc((100% - (24px * 3)) / 4);
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .flex-container article {
+    width: calc((100% - (24px * 2)) / 3);
+  }
+}
+
+@media (min-width: 501px) and (max-width: 640px) {
+  .flex-container article {
+    width: calc((100% - 24px) / 2);
+  }
+}
+@media (max-width: 500px) {
+  .flex-container article {
+    width: 100%;
+  }
+}
