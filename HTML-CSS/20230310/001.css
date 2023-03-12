@@ -1,0 +1,43 @@
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #fff;
+}
+
+.background {
+  background: url(images/bg.png);
+  width: 1292px;
+  height: 928px;
+  margin: auto;
+}
+
+.animal {
+  width: 300px;
+  margin: 0 auto;
+  padding-top: 70px;
+}
+
+.animal img {
+  vertical-align: top;
+}
+
+.section {
+  width: 300px;
+  margin: 0 auto;
+  background-color: #93572e;
+  border-bottom: 10px solid #4a260b;
+  border-radius: 0 0 20px 20px;
+}
+
+.title {
+  padding: 15px 20px 20px 20px;
+}
+
+.desc-text {
+  margin: 0 20px 30px 20px;
+  color: #d7c0b3;
+}
