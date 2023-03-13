@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>button 실습</title>
+    <style>
+      .wrapper {
+        width: 413px;
+        height: 192px;
+        background-color: #eee;
+        margin: 15px auto;
+        text-align: center;
+      }
+      .wrapper div {
+        width: 100%;
+      }
+
+      [class^="btn"] {
+        box-sizing: border-box;
+        width: 88px;
+        height: 32px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        background: #343f50;
+        color: #cbd5df;
+        border: 1px solid #1a202c;
+        box-shadow: inset 1px 1px #4a5568;
+        transition: all 0.2s;
+        cursor: pointer;
+      }
+
+      [class^="btn"]:hover {
+        color: #fff;
+      }
+
+      .btn {
+        color: #cbd5df;
+      }
+
+      .btn:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+
+      .btn:active {
+        box-shadow: inset 1px 1px #262f3e;
+        text-decoration: underline;
+      }
+
+      .btn-positive {
+        color: #439aff;
+      }
+
+      .btn-positive:hover,
+      .btn-positive:active {
+        background: #439aff;
+        text-decoration: underline;
+        border: 1px solid #439aff;
+        box-shadow: inset 1px 1px #73b4ff;
+      }
+
+      .btn-positive:active {
+        box-shadow: inset 1px 1px #3b77be;
+      }
+
+      .btn-negative {
+        color: #eb5757;
+      }
+
+      .btn-negative:hover,
+      .btn-negative:active {
+        background: #eb5757;
+        border: 1px solid #eb5757;
+        text-decoration: underline;
+        box-shadow: inset 1px 1px #fd6f6f;
+      }
+
+      .btn-negative:active {
+        box-shadow: inset 1px 1px #d94242;
+      }
+
+      .btn:disabled {
+        box-shadow: none;
+        color: #4a5568;
+        text-decoration: none;
+        border: 1px solid #343e4e;
+        background: #3a4556;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div>
+        <button class="btn" type="button">Button</button>
+      </div>
+      <div>
+        <button class="btn-positive" type="button">Yes</button>
+      </div>
+      <div>
+        <button class="btn-negative" type="button">Del</button>
+      </div>
+      <div>
+        <button class="btn" type="button" disabled>Disabled</button>
+      </div>
+    </div>
+  </body>
+</html>
