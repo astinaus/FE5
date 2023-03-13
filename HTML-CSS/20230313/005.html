@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>button 실습</title>
+    <title>button transition</title>
     <style>
       .wrapper {
         width: 413px;
@@ -27,20 +27,14 @@
         color: #cbd5df;
         border: 1px solid #1a202c;
         box-shadow: inset 1px 1px #4a5568;
+        transition: all 0.2s;
         cursor: pointer;
       }
 
       [class^="btn"]:hover {
         color: #fff;
-      }
-
-      .btn {
-        color: #cbd5df;
-      }
-
-      .btn:hover {
-        color: #fff;
         text-decoration: underline;
+        transition: all .3s;
       }
 
       .btn:active {
@@ -48,7 +42,7 @@
         text-decoration: underline;
       }
 
-      .btn-positive {
+      [class$="positive"] {
         color: #439aff;
       }
 
