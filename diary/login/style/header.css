@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Pretendard-Regular";
+  background-color: #fffaf0;
+  margin: 0;
+}
+
+header {
+  background-color: #fff;
+}
+
+.header-wrap {
+  width: 1224px;
+  margin: auto;
+  padding: 22px 0;
+}
+
+header .btn-logo {
+  height: 75px;
+}
+
+header .btn-join {
+  display: block;
+  padding: 1em 1em 1em 2.8em;
+  margin: 10px;
+  float: right;
+  text-decoration: none;
+  color: #5a6a72;
+  background: url(/diary/img/icon-join.svg) no-repeat 0.8em center / 2em;
+}
+
+.login-wrapper {
+  text-align: center;
+  width: 392px;
+  margin: 71px auto;
+}
+
+.login-wrapper h1 img {
+  display: block;
+  height: 120px;
+  margin: auto;
+}
+
+.login-wrapper img {
+  width: 250px;
+  margin-bottom: 29px;
+}
+
+.login-wrapper h1 strong {
+  box-shadow: inset 0 -0.6em #ff8ea371;
+  border-bottom: 2px solid #ff4f6e;
+}
+
+.login-wrapper h1 {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+footer p {
+  text-align: center;
+  font-size: 12px;
+  color: #677880;
+}
