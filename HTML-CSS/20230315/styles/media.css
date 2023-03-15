@@ -33,7 +33,7 @@ li {
 }
 
 .container {
-  width: 1200px;
+  max-width: 1200px;
   margin: 240px auto;
   display: flex;
 }
@@ -105,7 +105,7 @@ li a img {
     margin: 100px 30px 500px 30px;
   }
   .title {
-    margin-bottom: 20px;
+    margin-bottom: 60px;
   }
   .link li {
     float: left;
