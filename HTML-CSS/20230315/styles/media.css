@@ -1,0 +1,136 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Pretendard-Regular";
+  margin: 0;
+  display: flex;
+}
+
+h1,
+h2,
+p,
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: 0;
+  color: #fff;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  width: 1200px;
+  margin: 240px auto;
+  display: flex;
+}
+
+.title {
+  width: 614px;
+  margin-right: 100px;
+}
+
+.title h1 {
+  font-size: 68px;
+  line-height: 88px;
+  font-weight: normal;
+  white-space: pre-line;
+  margin-bottom: 20px;
+}
+
+.title h1 strong {
+  font-weight: 700;
+}
+
+.title p {
+  width: 350px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.contents,
+.books {
+  position: relative;
+}
+
+li a {
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  font-size: 10px;
+}
+
+li a h2 {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 30px;
+  left: 30px;
+  font-size: 3em;
+  font-weight: 700;
+}
+
+li a p {
+  position: absolute;
+  font-size: 16px;
+  bottom: 30px;
+  right: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+
+li a img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    margin: 100px 30px 500px 30px;
+  }
+  .title {
+    margin-bottom: 20px;
+  }
+  .link li {
+    float: left;
+    width: calc(50% - 20px);
+    height: auto;
+    margin-right: 20px;
+  }
+
+  li a {
+    font-size: 8px;
+  }
+
+  li img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 740px) {
+  .container {
+    margin: 100px 16px 91px 16px;
+  }
+
+  .link li {
+    display: block;
+    width: calc(100% - 20px);
+  }
+}
