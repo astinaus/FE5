@@ -129,6 +129,10 @@ li a img {
     margin: 100px 16px 91px 16px;
   }
 
+  .title {
+    margin-bottom: 60px;
+  }
+
   .link li {
     display: block;
     width: calc(100% - 20px);
