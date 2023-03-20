@@ -132,3 +132,48 @@ h3 {
 .container section ul li {
   margin-bottom: 76px;
 }
+
+.button-group {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: #fff;
+  border: 1px solid #677880;
+  border-radius: 20px;
+  width: 111px;
+  height: 40px;
+  overflow: hidden;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-group button {
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  padding: 0;
+  opacity: 0.6;
+  transition: opacity .3s;
+  cursor: pointer;
+}
+
+.button-group button:hover {
+  opacity: 1;
+}
+
+.button-group button img {
+  width: 100%;
+}
+
+.button-group span {
+  width: 1px;
+  height: 16px;
+  display: inline-block;
+  background-color: #d8ddde;
+  margin: 0 4px;
+}
