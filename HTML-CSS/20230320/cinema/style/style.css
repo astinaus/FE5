@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap");
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* reset */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+button {
+  padding: 0;
+  margin: 0;
+}
+button {
+  border: 0;
+  background: none;
+  font: inherit;
+}
+button:not(:disabled) {
+  cursor: pointer;
+}
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  vertical-align: top;
+}
+
+.wrapper {
+  background-color: #f2f2f2;
+  width: 1060px;
+  border: 2px solid #bdbdbd;
+  border-radius: 15px;
+  margin: 86px auto 135px;
+  padding: 40px 30px 30px 30px;
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* header */
+
+header {
+  width: 650px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 55px;
+  position: relative;
+}
+
+header h1::after {
+  position: absolute;
+  content: "";
+  width: 650px;
+  height: 0px;
+  border: 2px solid #bdbdbd;
+  bottom: -37px;
+  left: 0;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+header nav ul li button {
+  font-size: 16px;
+  padding: 10px 20px;
+  color: #828282;
+}
+
+header nav ul li button.active {
+  font-weight: bold;
+  color: #000;
+}
+
+/* main */
+.grid-container {
+  width: 1003px;
+  display: grid;
+  background: #fff;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 24px 23px;
+  border-radius: 15px;
+  border: 2px solid #bdbdbd;
+  padding: 26px 27px 30px 27px;
+  box-sizing: border-box;
+  margin: 18px auto 0;
+}
+
+.contents {
+  padding: 19px 20px 18px;
+}
+
+.card {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #bdbdbd;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.card h3 {
+  font-weight: 900;
+  font-size: 16px;
+  margin: 12px 0;
+}
+
+.card .poster {
+  width: 180px;
+  height: 250px;
+  border: 1px solid #bdbdbd;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  aspect-ratio: 180 / 250;
+  object-fit: cover;
+}
+
+.card ul {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  justify-content: space-between;
+}
+
+.card ul li {
+  list-style: inside;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.card ul li .star {
+  background: url(../images/icon-star.png) no-repeat 0 center;
+  padding-left: 1.3em;
+}
+
+.card ul li::marker {
+  color: #828282;
+}
+
+.card ul li:nth-child(1)::marker {
+  content: "개요 ";
+}
+
+.card ul li:nth-child(2)::marker {
+  content: "평점 ";
+}
+
+.card ul li:nth-child(3)::marker {
+  content: "개봉 ";
+}
+
+.card ul li:nth-child(4)::marker {
+  content: "출연 ";
+}
+
+.card .btn-group {
+  font-size: 14px;
+  line-height: 20px;
+  background: #f2f2f2;
+  border-top: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  display: flex;
+  height: 40px;
+}
+
+.btn-group a,
+.btn-group button {
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-group a {
+  border-right: 1px solid #bdbdbd;
+  border-radius: 0 0 0 10px;
+}
+
+.btn-group button {
+  border-radius: 0 0 10px 0;
+}
+
+.btn-group button::before {
+  content: "";
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  background: url(../images/icon-play.png) no-repeat 0 50% / 1.2em;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  height: 213px;
+  background-color: #f2f2f2;
+}
