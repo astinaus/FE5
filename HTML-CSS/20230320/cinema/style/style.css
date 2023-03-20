@@ -149,6 +149,7 @@ header nav ul li button.active {
   border-radius: 10px;
   aspect-ratio: 180 / 250;
   object-fit: cover;
+  box-sizing: border-box;
 }
 
 .card ul {
