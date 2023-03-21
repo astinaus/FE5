@@ -1,0 +1,132 @@
+h2,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.notice {
+  width: 728px;
+  color: #29363d;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.category {
+  display: flex;
+  gap: 57px;
+  align-items: center;
+}
+
+.category h2:not([class="select"]) {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.category li:first-child {
+  position: relative;
+}
+
+.category li:first-child::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: -28px;
+  width: 1px;
+  height: 8px;
+  background-color: #dddddd;
+}
+
+/* 드롭다운 메뉴 */
+.menu {
+  width: 14px;
+  height: 14px;
+  background: url(./img/add.png) no-repeat center;
+}
+
+.menu-list {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 5px 10px;
+  z-index: 10;
+  background-color: #eee;
+  color: royalblue;
+  font-weight: bold;
+  display: none;
+}
+
+/* 게시글리스트 */
+.list {
+  margin-top: 22px;
+}
+
+.list li {
+  overflow: hidden;
+  font-size: 16px;
+  padding: 0 16px;
+  border-top: 1px solid #eeeeee;
+}
+
+.list li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+}
+
+.list li:last-child {
+  border-bottom: 1px solid #eee;
+}
+
+.list li a strong {
+  font-size: 16px;
+  color: #2e6ff2;
+  padding-right: 16px;
+}
+
+.list li a > span {
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.list li > time {
+  margin-left: 40px;
+}
