@@ -115,16 +115,34 @@ fieldset {
 .input-id,
 .input-pw {
   padding-left: 16px;
+  margin-bottom: 10px;
 }
 
-.input-id {
+.form-login .input-id:placeholder-shown {
+  border: 2px solid #f4492e;
+}
+
+.form-login .input-id:placeholder-shown ~ .err-txt {
+  display: block;
+}
+
+.form-login .input-pw:placeholder-shown ~ .err-txt {
+  display: block;
+}
+
+/* err-txt */
+.err-txt {
+  display: none;
+  color: var(--err-color);
+  margin-top: -4px;
   margin-bottom: 10px;
+  font-size: 14px;
+  padding-left: 4px;
 }
 
 .form-login .chk-label {
   display: inline-block;
   height: 22px;
-  margin-top: 17px;
   margin-bottom: 21px;
   font-weight: 500;
   font-size: 16px;
@@ -141,6 +159,7 @@ fieldset {
   margin-right: 8px;
   vertical-align: -6px;
   background-image: url("./img/check-box-blank.svg");
+  transition: all 0.1s;
 }
 
 .form-login .input-chk:focus-visible + .chk-label::before {
@@ -170,15 +189,14 @@ fieldset {
   margin-bottom: 68px;
 }
 
+.link-join:hover,
+.link-find:hover {
+  text-decoration: underline;
+}
+
 .link-join::after {
   content: "|";
   margin: 0 12px;
-}
-
-/* err-txt */
-.err-txt {
-  color: var(--err-color);
-  display: none;
 }
 
 /* sns-login */
@@ -217,6 +235,11 @@ fieldset {
   background: no-repeat 12px 50%;
   border-radius: 5px;
   font-weight: 500;
+  transition: transform 0.2s;
+}
+
+.sns-login-btn:hover {
+  transform: translate(-2px, -2px);
 }
 
 .google {
