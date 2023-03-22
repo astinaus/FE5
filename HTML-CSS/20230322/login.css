@@ -15,7 +15,7 @@ body {
 }
 
 /* reset */
-
+h1,
 h2,
 p,
 ul,
@@ -32,6 +32,7 @@ button {
   background: none;
   font: inherit;
   color: inherit;
+  cursor: pointer;
 }
 
 a {
@@ -69,16 +70,18 @@ fieldset {
   box-sizing: border-box;
   border: 1px solid #c4c4c4;
   border-radius: 10px;
+  color: #767676;
 }
 
-/* h2 */
-.modal-wrapper > h2 {
+/* h1 */
+.modal-wrapper > h1 {
   font-weight: 500;
   font-size: 16px;
   text-align: center;
   border-bottom: 1px solid #c4c4c4;
   padding-bottom: 18px;
   margin: 0 -24px;
+  color: #000;
 }
 
 /* login */
@@ -90,6 +93,7 @@ fieldset {
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 24px;
+  color: #000;
 }
 
 /* form-login */
@@ -105,26 +109,27 @@ fieldset {
 }
 
 .form-login input:not([type="checkbox"])::placeholder {
-  padding-left: 15px;
   font-size: 16px;
 }
 
-.input-id {
-  margin-bottom: 6px;
+.input-id,
+.input-pw {
+  padding-left: 16px;
 }
 
-.input-pw {
-  margin-bottom: 17px;
+.input-id {
+  margin-bottom: 10px;
 }
 
 .form-login .chk-label {
   display: inline-block;
   height: 22px;
+  margin-top: 17px;
   margin-bottom: 21px;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  color: #767676;
+
   cursor: pointer;
 }
 
@@ -134,7 +139,7 @@ fieldset {
   width: 22px;
   height: 22px;
   margin-right: 8px;
-  vertical-align: -5px;
+  vertical-align: -6px;
   background-image: url("./img/check-box-blank.svg");
 }
 
@@ -155,10 +160,81 @@ fieldset {
   height: 50px;
   font-weight: 700;
   font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.link {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 68px;
+}
+
+.link-join::after {
+  content: "|";
+  margin: 0 12px;
 }
 
 /* err-txt */
 .err-txt {
   color: var(--err-color);
   display: none;
+}
+
+/* sns-login */
+.sns-login {
+  position: relative;
+}
+
+.sns-login::before {
+  content: "";
+  position: absolute;
+  top: -28px;
+  width: 100%;
+  border: 1px solid #c4c4c4;
+}
+
+.sns-login::after {
+  content: "또는";
+  position: absolute;
+  top: -37px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 14px;
+  width: 50px;
+  background-color: #fff;
+}
+
+.sns-lists li + li {
+  margin-top: 10px;
+}
+
+.sns-login-btn {
+  width: 100%;
+  padding: 15px 0;
+  border: 1px solid;
+  background: no-repeat 12px 50%;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.google {
+  background-image: url(./img/google-logo.svg);
+  border-color: #343434;
+}
+
+.facebook {
+  background-image: url(./img/facebook-logo.svg);
+  border-color: #2d9cdb;
+}
+
+.naver {
+  background-image: url(./img/naver-logo.svg);
+  border-color: #00bf18;
+}
+
+.kakao {
+  background-image: url(./img/kakao-logo.svg);
+  border-color: #f2c94c;
 }
