@@ -1,0 +1,27 @@
+@mixin flexbox($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin item($width: 100px, $heigh: 100px, $radius: 10%) {
+  width: $width;
+  height: $heigh;
+  border-radius: $radius;
+}
+
+.card {
+  @include flexbox(center, center);
+}
+
+.card-item {
+  @include item();
+}
+
+.product {
+  @include flexbox(right, right);
+}
+
+.product-item {
+  @include item(200px, 200px, 20%);
+}
