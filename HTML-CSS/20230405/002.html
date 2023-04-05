@@ -12,7 +12,7 @@
             padding: 0;
         }
 
-        .video {
+        /* .video {
             position: relative;
             width: 100%;
             height: 0;
@@ -30,17 +30,27 @@
         video {
             width: 100%;
             height: 100%;
+        } */
+
+        .full-screen-vid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
     </style>
 </head>
 
 <body>
-    <div class="video">
+    <!-- <div class="video">
         <iframe src="https://www.youtube.com/embed/1Q8fG0TtVAY" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
-    </div>
-    <!-- <video autoplay controls loop src="nextlevel.mp4"></video> -->
+    </div> -->
+    <video class="full-screen-vid" autoplay loop muted src="nextlevel.mp4"></video>
 </body>
 
 </html>
