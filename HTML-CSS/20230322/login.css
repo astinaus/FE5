@@ -159,7 +159,7 @@ fieldset {
     margin-right: 8px;
     vertical-align: -6px;
     /* background-image: url("./img/check-box-blank.svg"); */
-    background: url("./img/css_sprites.png") -10px -10px;
+    background: url("./img/css_sprites2x.png") -10px -10px / 84px 42px;
 }
 
 .form-login .input-chk:focus-visible + .chk-label::before {
@@ -169,7 +169,7 @@ fieldset {
 
 .form-login .input-chk:checked + .chk-label::before {
     /* background-image: url("./img/check-box-checked.svg"); */
-    background: url("./img/css_sprites.png") -52px -10px;
+    background: url("./img/css_sprites2x.png") -52px -10px / 84px 42px;
 }
 
 .btn-login {
@@ -245,25 +245,25 @@ fieldset {
 
 .google {
     /* background-image: url(./img/google-logo.svg); */
-    background: url("./img/logo_sprites.png") no-repeat -5px -2px;
+    background: url("./img/logo_sprites2x.png") no-repeat 1px 3px / 50px 200px;
     border-color: #343434;
 }
 
 .facebook {
     /* background-image: url(./img/facebook-logo.svg); */
-    background: url("./img/logo_sprites.png") no-repeat -5px -60px;
+    background: url("./img/logo_sprites2x.png") no-repeat 1px -49px / 50px 200px;
     border-color: #2d9cdb;
 }
 
 .naver {
     /* background-image: url(./img/naver-logo.svg); */
-    background: url("./img/logo_sprites.png") no-repeat -5px -118px;
+    background: url("./img/logo_sprites2x.png") no-repeat 1px -98px / 50px 200px;
     border-color: #00bf18;
 }
 
 .kakao {
     /* background-image: url(./img/kakao-logo.svg); */
-    background: url("./img/logo_sprites.png") no-repeat -5px -176px;
+    background: url("./img/logo_sprites2x.png") no-repeat 1px -148px / 50px 200px;
     border-color: #f2c94c;
 }
 
