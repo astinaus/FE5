@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 동영상</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .video {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 56.25%;
+        }
+
+        .video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/1Q8fG0TtVAY" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+    <!-- <video autoplay controls loop src="nextlevel.mp4"></video> -->
+</body>
+
+</html>
