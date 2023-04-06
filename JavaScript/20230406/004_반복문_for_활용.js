@@ -148,3 +148,53 @@ for (const item of user) {
 }
 console.log(Math.floor(ageSum / user.length));
 console.log((ageSum / user.length).toFixed(2));
+
+/////
+
+for (const i in user) {
+    ageSum += parseInt(user[i].age);
+}
+console.log((sss / user.length).toFixed(2));
+
+// why? for of와 for in문에서는 const가 가능한가요?
+// 한국어 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/for...of#%EB%AA%85%EC%84%B8%EC%84%9C
+// 영어 : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+// ECMAScript 명세서 : https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements
+// https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#prod-LetOrConst
+for (const i = 0; i < 10; i++) {
+    console.log(10);
+} // error
+
+{
+    const x = 10;
+    console.log(x);
+}
+console.log(x);
+
+for (const i in [1, 2, 3]) {
+    console.log(i);
+}
+
+for (const i of [1, 2, 3]) {
+    console.log(i);
+}
+
+///// 심화내용
+// 지금 당장은 몰라도 되는 내용들 입니다.
+
+let ssss = 0;
+for (const i of user) {
+    console.log(i);
+    console.log(i.age);
+    console.log(s);
+    console.log("----------");
+    s += i.age;
+}
+console.log((s / user.length).toFixed(2));
+
+/////// 외우세요. ///////
+
+user
+    .map((v) => v.age)
+    .filter((v) => !!v)
+    .reduce((a, b) => a + b, 0) / user.length;
