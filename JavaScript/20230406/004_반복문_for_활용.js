@@ -8,6 +8,7 @@ for (i = 0; i < arr.length; i++) {
 }
 
 // IE에서도 사용 가능
+// Array에서 for in 문을 쓰지 않기를 권해드립니다.
 let arr1 = [10, 20, 30, 40, 50];
 let obj1 = {
   one: 10,
