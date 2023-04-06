@@ -78,3 +78,10 @@ for (const [i, j, ...k] of test2) {
 let [a, b] = [10, 20];
 let [one, two, three] = "010-1234-5678".split("-");
 let [one1, two2, ...three3] = "010-1234-5678-9123".split("-");
+
+/// 이렇게 쓰는 경우도 있습니다.
+function hello(a, b, ...c) {
+    console.log(a, b, c);
+}
+
+hello(1, 2, 3, 4, 5, 6, 7);
