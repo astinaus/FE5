@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            width: 600px;
+            margin: 30px auto 0;
+
+        }
+
+        .color-bg {
+            width: 600px;
+            height: 600px;
+            background-color: #eee;
+            margin: 0 auto;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="color-bg">
+    </div>
+    <ul class="btn-container">
+        <li>
+            <button id="red">빨강</button>
+        </li>
+        <li>
+            <button id="blue">파랑</button>
+        </li>
+        <li>
+            <button id="yellow">노랑</button>
+        </li>
+    </ul>
+
+    <script>
+        const colorBg = document.querySelector('.color-bg');
+        const btns = document.querySelectorAll('button');
+
+        btns.forEach(function (el) {
+            el.addEventListener('click', function (e) {
+                const color = e.target.id;
+                colorBg.classList.remove('red', 'blue', 'yellow');
+                colorBg.classList.add(color);
+            });
+        });
+    </script>
+</body>
+
+</html>
