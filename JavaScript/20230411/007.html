@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .wrapper {
+            text-align: center;
+            padding: 15px;
+        }
+
+        main {
+            width: 100%;
+            height: 100vh;
+            background-color: salmon;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="wrapper">
+        <article class="picker">
+            <label for="bg">배경색 : </label>
+            <input type="color" id="bg" class="inp-picker">
+            <label for="txt">글자색 : </label>
+            <input type="color" id="txt" class="inp-picker">
+        </article>
+    </section>
+    <main>
+        <h1>Color Picker!!</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est sed, adipisci temporibus deleniti maxime alias.
+            Ad omnis earum voluptatibus, non, aperiam dolorum, asperiores aliquid laborum ipsum minima odit eius beatae.
+        </p>
+    </main>
+
+    <script>
+        const bg = document.querySelector('#bg');
+        const txt = document.querySelector('#txt');
+        const main = document.querySelector('main');
+
+        bg.addEventListener('input', function () {
+            main.style.backgroundColor = this.value;
+        });
+
+        txt.addEventListener('input', function () {
+            main.style.color = this.value;
+        });
+    </script>
+</body>
+
+</html>
