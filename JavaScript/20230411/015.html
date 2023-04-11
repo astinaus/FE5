@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마법의 구슬</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .input-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .marble {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #000 50%, #fff 100%);
+            box-shadow: 10px 8px 4px rgba(0, 0, 0, 0.25);
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="input-container">
+        <label for="color1">Color : </label>
+        <input type="color" id="color1" name="color1">
+    </section>
+    <div class="marble"></div>
+
+    <script>
+        const colorPicker = document.querySelector('#color1');
+        const marble = document.querySelector('.marble');
+
+        colorPicker.addEventListener('input', (e) => {
+            marble.style.background = `linear-gradient(135deg, ${e.target.value}, white)`;
+        });
+
+    </script>
+</body>
+
+</html>
