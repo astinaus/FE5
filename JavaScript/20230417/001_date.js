@@ -55,12 +55,18 @@ today.getTimezoneOffset() / 60;
 today.toString(); // -> Fri Jul 24 2020 12:30:00 GMT+0900 (대한민국 표준시)
 today.toTimeString(); // -> 12:30:00 GMT+0900 (대한민국 표준시)
 
+// https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
+// 국제표준시 기준 형식으로 표현
+today.toISOString();
+today.toISOString().slice(0, 10);
+today.toISOString().slice(0, 10).replace(/-/g, '');
 today = new Date('2023/1/20/10:00:00');
 today.toString();
 today.toISOString();
 today.toISOString().slice(0, 10);
 today.toISOString().slice(0, 10).replace(/-/g, '');
 
+// 날짜를 언어별로 구분하여 나타내는 문자열을 반환
 //http://www.w3bai.com/ko/tags/ref_language_codes.html#gsc.tab=0
 //http://www.w3bai.com/ko/tags/ref_country_codes.html#gsc.tab=0
 today.toLocaleString('ko-KR'); // -> 2020. 7. 24. 오후 12:30:00
@@ -78,3 +84,16 @@ let hour = today.getHours();
 let minute = today.getMinutes();
 let second = today.getSeconds();
 const ampm = hour >= 12 ? 'PM' : 'AM';
+
+// 4월 17일 추가
+// 날짜의 차를 구하는 코드
+// getTime은 1970 년 1 월 1 일 00:00:00 UTC와 주어진 날짜 사이의 경과 시간 (밀리 초)을 나타내는 숫자
+function getDateDiff(d1, d2) {
+  const date1 = new Date(d1);
+  const date2 = new Date(d2);
+  const diffDate = Math.abs(date1.getTime() - date2.getTime());
+  // 일 == 밀리세컨 * 초 * 분 * 시
+  return Math.abs(diffDate / (1000 * 60 * 60 * 24));
+}
+
+getDateDiff('2023-04-17', '2023-06-30'); // 74
