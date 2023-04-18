@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 달력</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #calendar {
+            display: inline-block;
+            padding: 20px;
+            background: #333;
+            text-align: center;
+            color: #fff;
+        }
+
+        #calendar table {
+            border-collapse: collapse;
+        }
+
+        caption {
+            font-size: 25px;
+            color: orange;
+            margin: 10px;
+        }
+
+        th,
+        td {
+            padding: 20px;
+            border: 1px solid #666;
+        }
+
+        th:first-child,
+        td:first-child {
+            color: red;
+        }
+
+        .prev,
+        .next {
+            color: inherit;
+            padding: 10px;
+            margin: 5px;
+            background-color: #333;
+            border-top: 2px solid #888;
+            border-left: 2px solid #888;
+            cursor: pointer;
+        }
+
+        .prev:active,
+        .next:active {
+            border-top: 2px solid #333;
+            border-left: 2px solid #333;
+            border-bottom: 2px solid #888;
+            border-right: 2px solid #888;
+        }
+    </style>
+</head>
+
+<body>
+    <article id="calendar">
+        <h2>💚나의 멋진 HTML 달력💚</h2>
+        <table>
+            <caption>
+                <time datetime="">
+                    <span class="year"></span>년
+                    <span class="month"></span>월
+                </time>
+            </caption>
+            <tr>
+                <th scope="col">일</th>
+                <th scope="col">월</th>
+                <th scope="col">화</th>
+                <th scope="col">수</th>
+                <th scope="col">목</th>
+                <th scope="col">금</th>
+                <th scope="col">토</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <button type="button" class="prev">이전달</button>
+        <button type="button" class="next">다음달</button>
+    </article>
+
+    <script>
+        function calendar(newYear, newMonth) {
+            // 1. 무슨 요일에 시작하는지 알아야 한다!
+            const time = new Date(newYear, newMonth - 1, 1);
+
+            // 2. 해당 월의 날이 며칠이나 있는지 알아야 한다!
+            // const timeLength = 32 - new Date(newYear, newMonth - 1, 32).getDate();
+            const timeLength = new Date(newYear, newMonth, 0).getDate();
+
+            let year = time.getFullYear(),
+                month = time.getMonth() + 1,
+                date = time.getDate(),
+                day = time.getDay()
+
+            const captionYear = document.querySelector('.year'),
+                captionMonth = document.querySelector('.month'),
+                timeEl = document.querySelector('time'),
+                days = document.querySelectorAll('tr td');
+
+            days.forEach(item => {
+                item.innerHTML = '&nbsp;';
+            });
+
+            for (let i = day; i < timeLength + day; i++) {
+                days[i].textContent = date++;
+            }
+
+            captionYear.textContent = year;
+            captionMonth.textContent = month;
+            timeEl.dateTime = `${year}-${month}`;
+
+        }
+
+        const btns = document.querySelectorAll('button');
+        btns.forEach(item => {
+            item.addEventListener('click', function () {
+                if (item.classList.contains('prev')) {
+                    calendar(year, --month);
+                } else {
+                    calendar(year, ++month);
+                }
+            });
+        });
+
+        let year = new Date().getFullYear();
+        month = new Date().getMonth() + 1;
+
+        calendar(year, month);
+    </script>
+</body>
+
+</html>
