@@ -1,6 +1,5 @@
 // 웹페이지 좌측 클릭시 왼쪽으로 캐러셀이 회전.
 // 우측 클릭시 오른쪽으로 캐러셀 회전
-const listItem = document.querySelector('.list-item');
 const left = document.querySelector('.left');
 const right = document.querySelector('.right');
 const root = document.querySelector(':root');
