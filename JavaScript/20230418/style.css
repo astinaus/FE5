@@ -67,7 +67,7 @@
   transform: rotateY(306deg) translateZ(calc(340px * 7 / 2 / 3.14));
 }
 
-.left {
+#left {
   position: absolute;
   left: 0;
   width: 35vw;
@@ -76,7 +76,7 @@
   z-index: 100;
 }
 
-.right {
+#right {
   position: absolute;
   right: 0;
   width: 35vw;
