@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        const me = {
+            name: '웨이드',
+            address: '제주도 제주시 인다 1길',
+            phoneNum: '010-8001-6536',
+            canWalk: function () {
+                console.log('웨이드가 걷는다.');
+            },
+            teaching: function (myStudent) {
+                myStudent.levelUp();
+            }
+        }
+        const student = {
+            level: 1,
+            levelUp: function () {
+                this.level++;
+            }
+        }
+        me.teaching(student);
+
+        function NewFactory(name) {
+            this.name = name;
+            this.sayYourName = function () {
+                console.log(`삐리비빅. 제 이름은 ${this.name} 입니다.`);
+            }
+        }
+
+        const robot = new NewFactory('로봇');
+        const robot2 = new NewFactory('로봇2');
+        const robot3 = new NewFactory('로봇3');
+        // 생성자 함수를 사용하면 프로퍼티와 메서드를 공유하는 객체를 여러개 만들 수 있다.
+
+
+    </script>
+</body>
+
+</html>

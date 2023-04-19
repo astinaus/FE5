@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function FoodPicker(array) {
+            this.name = array;
+        };
+
+        const foodPicker = new FoodPicker(['짜장면', '짬뽕', '탕수육', '군만두']);
+
+        FoodPicker.prototype.pick = function () {
+            console.log(`삐리릭. 오늘의 메뉴는 ${this.name[Math.floor(Math.random() * this.name.length)]}입니다.`)
+        }
+
+    </script>
+</body>
+
+</html>
