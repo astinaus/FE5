@@ -9,10 +9,9 @@ btn.forEach((item) => {
   item.addEventListener('click', (e) => {
     if (e.target.id === 'left') {
       angle += 51.42;
-      root.style.setProperty('--angle', `${angle}deg`);
     } else if (e.target.id === 'right') {
       angle -= 51.42;
-      root.style.setProperty('--angle', `${angle}deg`);
     }
+    root.style.setProperty('--angle', `${angle}deg`);
   });
 });
