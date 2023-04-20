@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function PersonGenerator() {
+            let age = 25;
+
+            function innerPersonType() { };
+
+            innerPersonType.prototype.getAge = function () {
+                return age;
+            }
+
+            return innerPersonType;
+        }
+
+        const Person = PersonGenerator();
+        const myPerson = new Person();
+
+        const PersonGenerator2 = (function () {
+            let age = 25;
+
+            function innerPersonType() { };
+
+            innerPersonType.prototype.getAge = function () {
+                return age;
+            }
+
+            return innerPersonType;
+        })();
+
+        const myPerson2 = new PersonGenerator2();
+
+    </script>
+</body>
+
+</html>

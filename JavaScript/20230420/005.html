@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 250px;
+            height: 250px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script>
+        const box = document.getElementById('box');
+
+        let x = 0;
+        let y = 0;
+        // 사용자가 어떤 키를 눌렀는지 정보를 저장하는 객체.
+        let keys = {};
+
+        // 사용자가 키를 눌렀을 때 실행(keydown)
+        function move(e) {
+            keys[e.key] = true;
+            play();
+        }
+
+        // 사용자가 키에서 손을 뗐을 때 실행(keyup)
+        function stop(e) {
+            keys[e.key] = false;
+            play();
+        }
+
+        document.addEventListener('keydown', move)
+        document.addEventListener('keyup', stop)
+
+        /* function move(e) {
+            const keyName = e.key;
+            if (keyName === 'ArrowRight') {
+                x += 10;
+            } else if (keyName === 'ArrowLeft') {
+                x -= 10;
+            } else if (keyName === 'ArrowUp') {
+                y -= 10;
+            } else if (keyName === 'ArrowDown') {
+                y += 10;
+            }
+            box.style.transform = `translate(${x}px, ${y}px)`;
+        } */
+
+        function play() {
+            if (keys.ArrowRight) {
+                x += 5;
+                box.style.transform = `translate(${x}px, ${y}px)`;
+            } else if (keys.ArrowLeft) {
+                x -= 5;
+                box.style.transform = `translate(${x}px, ${y}px)`;
+            } else if (keys.ArrowUp) {
+                y -= 5;
+                box.style.transform = `translate(${x}px, ${y}px)`;
+            } else if (keys.ArrowDown) {
+                y += 5;
+                box.style.transform = `translate(${x}px, ${y}px)`;
+            }
+            requestAnimationFrame(play);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+
+<body>
+    <h1>ToDoList</h1>
+    <script>
+        class Todo {
+            constructor(todo, status) {
+                this.todo = todo;
+                this.status = status;
+            }
+
+            changeState() {
+                this.status = !this.status;
+            }
+        }
+
+        class TodoManager {
+            #todoList = [];
+
+            constructor() {
+                this.#todoList = [];
+            }
+
+            addTodo(todo, status = false) {
+                const newTodo = new Todo(todo, status);
+                this.#todoList.push(newTodo);
+                const todoList = document.createElement('ul');
+                const todoItems = document.createElement('li');
+                const isDone = document.createElement('span');
+                todoItems.innerText = todo;
+                isDone.textContent = this.#todoList[this.todoList.length - 1].status;
+                todoItems.appendChild(isDone);
+                todoList.appendChild(todoItems);
+                document.body.appendChild(todoList);
+            }
+
+            showTodo() {
+                console.log(this.#todoList);
+            }
+
+            changeState() {
+                const index = prompt('몇 번째 할 일을 변경하시겠습니까?') - 1;
+                this.#todoList[index].changeState();
+                const status = document.querySelectorAll('span');
+                status.forEach((item, index) => {
+                    item.textContent = this.#todoList[index].status;
+                })
+            }
+
+            getLeftTodoCount() {
+                return this.#todoList.filter(todo => !todo.status).length;
+            }
+        }
+        /* class Todo {
+            constructor(item, isDone) {
+                this.item = item;
+                this.isDone = isDone;
+            }
+
+            changeState() {
+                this.isDone = !this.isDone;
+            }
+        }
+
+        class TodoManager {
+            constructor() {
+                this.todoList = [];
+            }
+
+            addItem(item, isDone = false) {
+                const todo = new Todo(item, isDone);
+                this.todoList.push(todo);
+            }
+
+            getItems() {
+                return this.todoList;
+            }
+
+            getLeftTodoCount() {
+                return this.todoList.reduce((acc, cur) => {
+                    cur.isDone === false ? ++acc : acc
+                }, 0);
+            }
+        } */
+    </script>
+</body>
+
+</html>
