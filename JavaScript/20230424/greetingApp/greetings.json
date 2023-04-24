@@ -1,0 +1,16 @@
+{
+  "greetings": [
+    {
+      "userName": "jaehyun",
+      "greeting": "반갑수꽝"
+    },
+    {
+      "userName": "hojun",
+      "greeting": "여러분 깨어있으시죠?"
+    },
+    {
+      "userName": "subin",
+      "greeting": "아닙니다."
+    }
+  ]
+}

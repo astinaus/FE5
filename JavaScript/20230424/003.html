@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="id"></div>
+
+    <script>
+        const parent = document.querySelector('#id');
+        const frag = document.createDocumentFragment();
+
+        for (let i = 0; i < 10; i++) {
+            const article = document.createElement('article');
+            const figure = document.createElement('figure');
+            const img = document.createElement('img');
+            const figCap = document.createElement('figcaption');
+
+            article.classList.add('parent');
+            img.src = 'https://file.mk.co.kr/meet/neds/2021/07/image_readtop_2021_654175_16256093474708254.jpg';
+            figCap.textContent = '유재석씨가 수상식에서 환하게 웃고 있다.';
+
+            figure.appendChild(img);
+            figure.appendChild(figCap);
+            article.appendChild(figure);
+            frag.appendChild(article);
+        }
+        parent.append(frag);
+    </script>
+</body>
+
+</html>
