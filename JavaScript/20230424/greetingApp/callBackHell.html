@@ -14,12 +14,41 @@
 
         class UserStorage {
 
-            searchUser() {
+            searchUser(userName, password, onSuccess, onError) {
                 const xhr = new XMLHttpRequest();
                 xhr.open('GET', 'users.json');
                 xhr.onreadystatechange = () => {
                     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                        const result = JSON.parse(xhr.responseText);
+                        const result = JSON.parse(xhr.responseText).user.find((el) => {
+                            return el.userName === userName && el.password === password
+                        })
+                        if (result) {
+                            onSuccess(userName);
+                        } else {
+                            onError(new Error('User Not Found'));
+                        }
+                    }
+                }
+
+                xhr.send();
+            }
+
+            sayHi(user, onSuccess, onError) {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', 'greetings.json');
+                xhr.onreadystatechange = () => {
+                    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                        const result = JSON.parse(xhr.responseText).greetings.find((el) => {
+                            return el.userName === user
+                        })
+                        if (result) {
+                            onSuccess({
+                                name: result.userName,
+                                greeting: result.greeting
+                            });
+                        } else {
+                            onError(new Error('User Not Found'));
+                        }
                     }
                 }
 
@@ -28,7 +57,26 @@
         }
 
         const userStorage = new UserStorage();
-        userStorage.searchUser();
+
+        const userName = prompt('이름을 입력하세요')
+        const password = prompt('비밀번호를 입력하세요')
+        userStorage.searchUser(
+            userName,
+            password,
+            (name) => {
+                userStorage.sayHi(
+                    name,
+                    (result) => {
+                        alert(`당신에게 인사합니다. ${result.name}님. ${result.greeting}`)
+                    },
+                    (error) => {
+                        console.log(new Error('알맞는 인사말이 없습니다.'))
+                    }
+                )
+            },
+            (error) => console.log(error)
+        );
+
     </script>
 </body>
 

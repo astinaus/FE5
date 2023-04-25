@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        class UserStorage {
+
+            searchUser(userName, password) {
+
+                return new Promise((resolve, reject) => {
+                    fetch('users.json')
+                        .then((data) => {
+                            return data.json()
+                        }).then((response) => {
+                            const result = response.user.find((item) => {
+                                return item.userName === userName && item.password === password
+                            });
+
+                            if (result) {
+                                resolve(userName);
+                            } else {
+                                reject('user not found');
+                            }
+                        })
+
+                })
+            }
+
+            sayHi(user) {
+                return new Promise((resolve, reject) => {
+
+                    fetch('greetings.json')
+                        .then((data) => {
+                            return data.json()
+                        }).then((response) => {
+                            const result = response.greetings.find((item) => {
+                                return item.userName === userName
+                            });
+                            if (result) {
+                                resolve({
+                                    name: result.userName,
+                                    greeting: result.greeting
+                                });
+                            } else {
+                                reject('User Not Found');
+                            }
+                        })
+                })
+            }
+        }
+        const userStorage = new UserStorage();
+
+        const userName = prompt('이름을 입력하세요')
+        const password = prompt('비밀번호를 입력하세요')
+        userStorage.searchUser(userName, password)
+            .then((result) => {
+                return userStorage.sayHi(result);
+            }).then((result) => {
+                alert(`안녕하세요 ${result.name}님! ${result.greeting}`)
+            }).catch((error) => {
+                console.log(error);
+            })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        class UserStorage {
+
+            async searchUser(userName, password) {
+
+                // await : 프로미스 객체가 반환될 때 까지 다음 코드의 동작을 중지하고, 프로미스 객체의 fulfilled값을 반환합니다.
+                const response = await fetch('users.json');
+                const data = await response.json();
+                const result = data.user.find((item) => {
+                    return item.userName === userName && item.password === password
+                });
+                if (result) {
+                    return userName;
+                } else {
+                    throw 'user not found';
+                }
+
+                // .then((data) => {
+                //     if (data.ok === true) {
+                //         return data.json()
+                //     } else {
+                //         console.log(new Error('네트워크 응답에 문제가 발생했습니다.'))
+                //     }
+                // }).then((response) => {
+                //     const result = response.user.find((item) => {
+                //         return item.userName === userName && item.password === password
+                //     });
+
+                //     if (result) {
+                // await로 인해 userName이 반환됩니다.
+                //         resolve(userName);
+                //     } else {
+                //         throw 'user not found';
+                //     }
+                // })
+
+            }
+
+
+            async ayHi(user) {
+                const response = await fetch('greetings.json');
+                const data = await response.json();
+                const result = data.greetings.find((item) => {
+                    return item.userName === userName
+                });
+                if (result) {
+                    return {
+                        name: result.userName,
+                        greeting: result.greeting
+                    };
+                } else {
+                    throw 'no greetings';
+                }
+
+                //        .then((data) => {
+                //           if (data.ok === true) {
+                //                return data.json()
+                //            } else {
+                //                console.log(new Error('네트워크 응답에 문제가 발생했습니다.'))
+                //            }
+                //        }).then((response) => {
+                //           const result = response.greetings.find((item) => {
+                //                return item.userName === userName
+                //           });
+                //           if (result) {
+                //               resolve({
+                //                    name: result.userName,
+                //                    greeting: result.greeting
+                //                });
+                //            } else {
+                //                throw 'user not found';
+                //            }
+                //        })
+                //    })
+            }
+        }
+        const userStorage = new UserStorage();
+
+        const userName = prompt('이름을 입력하세요');
+        const password = prompt('비밀번호를 입력하세요');
+        try {
+
+            (async function () {
+                const user = await userStorage.searchUser(userName, password)
+                const result = await userStorage.sayHi(user);
+                alert(`안녕하세요 ${result.name}님! ${result.greeting}`);
+            })();
+        } catch (error) {
+            console.log(new Error(error));
+        }
+            // .then((result) => {
+            //     return userStorage.sayHi(result);
+            // }).then((result) => {
+            //     alert(`안녕하세요 ${result.name}님! ${result.greeting}`)
+            // }).catch((error) => {
+            //     console.log(error);
+            // })
+
+    </script>
+</body>
+
+</html>
