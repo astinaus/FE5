@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>위니브 샵</title>
+    <link rel="stylesheet" href="./src/style/reset.css">
+    <link rel="stylesheet" href="./src/style/style.css">
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const data = async function () {
+            const response = await fetch('http://test.api.weniv.co.kr/mall')
+            return response.json();
+        }
+
+        function Card() {
+            const [product, setProduct] = React.useState([]);
+
+            React.useEffect(() => {
+                data().then((data) => {
+                    setProduct(data);
+                });
+            }, []);
+
+            return (
+                <div>
+                    {product.map((item) => (
+                        <div key={item.id}>
+                            <img src={'http://test.api.weniv.co.kr/' + item.thumbnailImg} alt={item.productName} />
+                            <p>{item.productName}</p>
+                            <p>{item.price}</p>
+                        </div>
+                    ))}
+                </div>
+            );
+        }
+
+        function Product() {
+            return (
+                <div>
+                    <Card />
+                </div>
+            );
+        }
+
+        function Header() {
+            return (
+                <div>
+                    <h1>위니브 샵</h1>
+                </div>
+            );
+        }
+
+
+
+        function App() {
+            return (
+                <div>
+                    <Header />
+                    <Product />
+                </div>
+            );
+        }
+
+        const domContainer = document.querySelector('#root');
+        const root = ReactDOM.createRoot(domContainer);
+        root.render(<App />);
+    </script>
+</body>
+
+</html>
