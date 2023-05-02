@@ -36,7 +36,7 @@
                         <div key={item.id}>
                             <img src={'http://test.api.weniv.co.kr/' + item.thumbnailImg} alt={item.productName} />
                             <p>{item.productName}</p>
-                            <p>{item.price}</p>
+                            <p>{item.price}원</p>
                         </div>
                     ))}
                 </div>
@@ -58,8 +58,6 @@
                 </div>
             );
         }
-
-
 
         function App() {
             return (
