@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 이 문제는 실제로 입사문제로 사용되던 알고리즘 문제입니다.
+    // 배열이 하나 주어졌을때 [3,3,2,4,5,2,1,0,3];
+    // 함수를 만듭니다. 가장 먼저 반복되는 원소의 값을 반환합니다.
+
+    function bubbleSortTest(arr) {
+      const myHash = {};
+      for (let i = 0; i < arr.length; i++) {
+        if (myHash[arr[i]]) {
+          return arr[i];
+        } else {
+          myHash[arr[i]] = 1;
+        }
+      }
+
+      return '반복되는 원소가 없습니다.'
+    }
+  </script>
+</body>
+
+</html>

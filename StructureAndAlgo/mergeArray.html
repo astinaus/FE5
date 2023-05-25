@@ -29,7 +29,7 @@
       let j = 1;
 
       // arr1FirstEl, arr2FirstEl 두 값이 모두 falsy 를 반활할 때까지 반복합니다.
-      while (arr1FirstEl || arr2FirstEl) {
+      while (arr1FirstEl === undefined || arr2FirstEl === undefined) {
         console.log(arr1FirstEl, arr2FirstEl);
 
         if (arr2FirstEl === undefined || arr1FirstEl < arr2FirstEl) {
