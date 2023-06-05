@@ -1,8 +1,12 @@
 const path = require('path'); // 운영체제별로 상이한 경로 문법을 해결해 절대 경로로 변환하는 역할을 합니다.
 const webpack = require('webpack');
+const childProcess = require('child_process');
+require('dotenv').config();
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: 'development', // 개발용으로 빌드합니다.
+  mode: process.env.NODE_ENV === 'development' ? 'development' : 'production',
   entry: {
     main: path.resolve('./src/app.js'),
   },
@@ -36,7 +40,19 @@ module.exports = {
   },
   plugins: [
     new webpack.BannerPlugin({
-      banner: () => `빌드 시간: ${new Date().toLocaleString()}`,
+      banner: `
+    Commit version : ${childProcess.execSync('git rev-parse --short HEAD')}
+    Committer : ${childProcess.execSync('git config user.name')}
+    Commit Date : ${new Date().toLocaleString()}
+`,
     }),
+    new webpack.DefinePlugin({
+      dev: JSON.stringify(process.env.DEV_API),
+      pro: JSON.stringify(process.env.PRO_API),
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html', // 목표 html 파일의 위치입니다.
+    }),
+    new CleanWebpackPlugin(),
   ],
 };
