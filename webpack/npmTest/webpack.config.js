@@ -4,6 +4,7 @@ const childProcess = require('child_process');
 require('dotenv').config();
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV === 'development' ? 'development' : 'production',
@@ -55,4 +56,19 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
+  optimization: {
+    // 웹팩의 최적화 활성화 옵션입니다.
+    minimize: true,
+    minimizer: [
+      new ImageMinimizerPlugin({
+        test: /\.(jpe?g|png|gif|svg)$/,
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            plugins: [['imagemin-optipng', { optimizationLevel: 1 }]],
+          },
+        },
+      }),
+    ],
+  },
 };
