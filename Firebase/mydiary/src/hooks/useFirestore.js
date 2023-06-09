@@ -1,4 +1,10 @@
-import { collection, addDoc } from 'firebase/firestore';
+import {
+  collection,
+  addDoc,
+  deleteDoc,
+  doc,
+  updateDoc,
+} from 'firebase/firestore';
 import { useReducer } from 'react';
 import { appFireStore, Timestamp } from '../firebase/config';
 
@@ -14,6 +20,20 @@ const storeReducer = (state, action) => {
     case 'isPending':
       return { isPending: true, document: null, isSuccess: false, error: null };
     case 'addDoc':
+      return {
+        isPending: false,
+        document: action.payload,
+        isSuccess: true,
+        error: null,
+      };
+    case 'deleteDoc':
+      return {
+        isPending: false,
+        document: action.payload,
+        isSuccess: true,
+        error: null,
+      };
+    case 'updateDoc':
       return {
         isPending: false,
         document: action.payload,
@@ -48,7 +68,25 @@ export const useFirestore = (transaction) => {
     }
   };
 
-  const deleteDocument = (id) => {};
+  const deleteDocument = async (id) => {
+    dispatch({ type: 'isPending' });
+    try {
+      const docRef = await deleteDoc(doc(colRef, id));
+      dispatch({ type: 'deleteDoc', payload: docRef });
+    } catch (error) {
+      dispatch({ type: 'error', payload: error.message });
+    }
+  };
 
-  return { addDocument, deleteDocument, response };
+  const updateDocument = async (id, doc) => {
+    dispatch({ type: 'isPending' });
+    try {
+      const docRef = await updateDoc(doc(colRef, id), doc);
+      dispatch({ type: 'updateDoc', payload: docRef });
+    } catch (error) {
+      dispatch({ type: 'error', payload: error.message });
+    }
+  };
+
+  return { addDocument, deleteDocument, updateDocument, response };
 };

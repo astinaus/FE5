@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './Home.module.css';
 import { useFirestore } from '../../hooks/useFirestore';
 
-export default function DiaryForm({ uid }) {
+export default function DiaryForm({ uid, edit, diary }) {
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
   const { addDocument, response } = useFirestore('secretDiary');
